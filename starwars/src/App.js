@@ -38,7 +38,7 @@ const App = () => {
   const [ nextPageURL, setNextPageURL ] = useState();
   const [ prevPageURL, setPrevPageURL ] = useState();
   const [ loading, setLoading ] = useState(true);
-  
+  const [ imgURL, setImgURL ] = useState();
 
 
 
@@ -50,9 +50,11 @@ const App = () => {
 
     .then((res) => {
       setLoading(false)
-      setPokemon(res.data.results.map((el) => `${el.name.toString().toUpperCase()}`))
+      setPokemon(res.data.results.map((el,index) => `${el.name.toString().toUpperCase()}`))
       setNextPageURL(res.data.next)
       setPrevPageURL(res.data.previous)
+      //setImgURL(res.data.results.map((index) => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`));
+      
     }); 
 
     return () => cancel()
@@ -77,7 +79,8 @@ const App = () => {
 if(loading) return "Gathering berries, Loading Pokedex, Organizing Pokeballs..."
   return (
     <>
-      <PokemonList pokemon={pokemon}/>
+      <PokemonList pokemon={pokemon} imgUrl={imgURL}/>
+
       {/*render ( goes straight to the index.html in the root div. , alike placesng textures over objects. */}
       <Pagination gotoNextPage={gotoNext} gotoLastPage={gotoLast}/>
     </>
