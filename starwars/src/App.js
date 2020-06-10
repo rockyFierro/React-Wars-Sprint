@@ -19,7 +19,7 @@ const App = () => {
   -delete bloat code
   -comps: pokemon list
           pagaentation
-  -make new files for components
+  -make new files for components  
   -gonne use state, import apropriate hooks
   -states: a pokemon list, the next list
   -import'ant to remember: make sure to import other components as they are needed
@@ -30,7 +30,7 @@ const App = () => {
 
   const [ imPokemon,mutPokemon ] = useState(['pikachu','farfetched']);//notes: returns two variables inside of an array.[immutable/mutable]=useState(defaultState)
   return (
-    <PokemonList pokemon={imPokemon}/>
+    <PokemonList pokemon={imPokemon}/>//render ( to the index.html in the root div. )
   );
 }
 
