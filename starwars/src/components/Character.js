@@ -12,11 +12,12 @@ TODO:
 */
 export default function PokemonList({ pokemon }) {
     return (
+        
         <Container>
             {
                 pokemon.map((el,index) => (
-                    <Row sm="8">
-                       <Col sm>     
+                    <Row xl="1">
+                       <Col xl>     
                             <Card className="text-center" >
                                 <CardBody>
                                 <CardHeader key={el}><h1>{el}</h1></CardHeader>
@@ -41,5 +42,6 @@ export default function PokemonList({ pokemon }) {
             }
             
         </Container>
+        
     )
 }
