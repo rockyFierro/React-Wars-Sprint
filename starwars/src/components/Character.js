@@ -12,8 +12,14 @@ export default function PokemonList({ pokemon }) {
     return (
         <div>
             {
-                pokemon.map(el => (
-                    <div key={el}>{el}</div>
+                pokemon.map((el,index) => (
+                    <>
+                        <div key={el}>{el}</div>
+                    
+                        <img key={index} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`}
+                        alt={el}/>
+                        {console.log(pokemon)}
+                    </>
                 ))}
         </div>
     )
